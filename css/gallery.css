@@ -1,0 +1,160 @@
+﻿.space{
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+.galleryWrapper, .modalGalleryWrapper  {
+text-align: center;
+    padding-bottom:20px;
+}
+.galleryWrapper ul, .modalGalleryWrapper ul{
+    list-style: none;
+    display: inline-block;
+    margin: auto;
+padding-left: 0;
+}
+.galleryWrapper ul {
+     width:90%
+ }
+.galleryItem, .modalGalleryItem{
+    display: inline-block;
+    vertical-align: top;
+}
+.galleryItem img{
+    width:100px;
+    height:100px;
+    cursor: pointer;
+}
+
+.controls {
+    display: inline-block;
+    cursor: pointer;
+    color: #fff;
+    box-shadow: none;
+    border: none;
+    padding: 35px 10px;
+    font-size: 1.2em;
+    background: transparent;
+}
+.featuresWrapper {
+    padding: 20px 0;
+    background: #e4e4e4;
+    border-radius: 10px;
+    margin: 50px auto;
+}
+.feature {
+    display: inline-block;
+    width: 19%;
+    padding: 10px;
+    text-align: left;
+}
+.feature h5 {
+    font-weight: bold;
+}
+.feature span.glyphicon {
+    color: #337AB7;
+}
+.galleryContainer {
+    background: #337AB7;
+    padding: 20px 10px;
+    border-radius: 10px;
+}
+/*****************Modal*****************/
+.exitModal{
+    float:right;
+    padding:10px 15px 0 0;
+    cursor: pointer;
+}
+.imgDataContainer{
+    margin: 10px auto;
+    text-align:center;
+    font-weight:bold;
+    width: 70%;
+}
+
+.modalGalleryWrapper {
+    width: 95%;
+    margin: auto;
+}
+.imgDataContainer img{
+    margin:  auto;
+    display: inline-block;
+    max-width:80%;
+}
+.modalGalleryItem img{
+    width:50px;
+    height:50px;
+    cursor: pointer;
+}
+.modalControls{
+    display: inline-block;
+    cursor: pointer;
+    padding: 150px 0px;
+    font-size: 1.5em;
+}
+.imgData{
+    display: inline-block;
+}
+/*************Animations***********/
+.fadeModal {
+    transition: 1s linear all;
+    -webkit-transition: 1s linear all;
+}
+
+.fadeModal.ng-enter {
+    opacity: 0;
+}
+
+.fadeModal.ng-enter.ng-enter-active {
+    opacity: 1;
+}
+
+.fadeModal.ng-leave {
+    opacity: 1;
+}
+
+.fadeModal.ng-leave.ng-leave-active {
+    opacity: 0;
+}
+
+/************Bootstrap Changes**************/
+
+.btn{
+    background: #337AB7;
+    color: #fff;
+    font-weight: 600;
+    height: 34px;
+    font-size: 12px;
+    margin: 0;
+    padding: 6px 12px;
+}
+.btn span.glyphicon {
+    color: #fff;
+}
+.btn:hover {
+    color: #fff;
+    text-decoration: none;
+    background: #2C6698;
+}
+h1 {
+    text-align: center;
+    color: #337AB7;
+    font-weight: 600;
+}
+.pagination {
+    margin: 50px 0;
+}
+.modal-content {
+    background: rgba(251, 248, 248, 0.88)
+}
+
+/*********Media Queries***********/
+/*PC*/
+@media screen and (max-width: 1367px) {
+    .galleryItem img {
+        width: 80px;
+        height: 80px;
+    }
+    h5 {
+        font-size: 13px;
+    }
+}

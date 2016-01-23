@@ -1,0 +1,56 @@
+<div class=" col-md-12 galleryWrapper">
+    <div class="row featuresWrapper">
+        <div class="feature sort" ng-show="sortFeature">
+            <h5><span class="glyphicon glyphicon-sort-by-alphabet"></span> Sort by:</h5>
+            <select ng-model="predicate" class="form-control">
+                <option value="">-</option>
+                <option value="title">Title</option>
+                <option value="date">Date</option>
+            </select>
+        </div>
+        <div class="feature search" ng-show="sortFeature" ng-show="searchFeature">
+            <h5 class=""><span class="glyphicon glyphicon-search"></span> Search by Image Title: </h5>
+            <input class="form-control" type="text" ng-model="query" placeholder="...">
+        </div>
+        <div class="feature itemsPerPage" ng-show="searchFeature">
+            <h5><span class="glyphicon glyphicon-search"></span> Max Items Per Page:</h5>
+            <select ng-model="maxTumbImg" class="form-control">
+                <option value="5">5</option>
+                <option value="10" ng-selected="true">10</option>
+                <option value="15">15</option>
+                <option value="20">20</option>
+            </select>
+        </div>
+        <div class="feature autoSlide">
+            <h5> <span class="glyphicon glyphicon-repeat"></span> Auto Slide:</h5>
+            <select ng-model="autoSlide" class="form-control">
+                <option value="false" ng-selected="true">Off</option>
+                <option value="true">on</option>
+            </select>
+        </div>
+        <div class="feature slideshow">
+            <h5> <span class="glyphicon glyphicon-picture"></span> Slideshow:</h5>
+            <button class="btn" ng-click="open('slideShowModal',$index,item)"><span class="glyphicon glyphicon-play"></span> Play</button>
+        </div>
+    </div>
+<div class="galleryContainer">
+    <button class="controls" ng-click="showPrevImages()" ng-disabled="filtered.length<maxTumbImg" style="float:left">
+        <span class="glyphicon glyphicon-chevron-left" ></span>
+    </button>
+    <ul>
+        <li ng-repeat="item in filtered = (images | filter:search) | orderBy:predicate|  limitTo: maxTumbImg:bottomLimit " class="galleryItem">
+            <a ng-href="" ng-click="open('enlargeModal',$index,item)">
+                <img ng-src="{{item.url}}"/>
+            </a>
+        </li>
+    </ul>
+    <button class="controls" ng-click="showNextImages()" ng-disabled="filtered.length<maxTumbImg" style="float:right">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+    </button>
+</div>
+    <div class="pagination" ng-show="pagiFeature">
+        <li ng-repeat="i in range() track by $index" ng-class="{active: activePaginationIndex==$index} ">
+            <a  ng-click="changeImageView($index)">{{$index+1}}</a>
+        </li>
+    </div>
+</div>
